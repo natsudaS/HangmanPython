@@ -1,6 +1,19 @@
 import random
 
-word_bank = ['rizz', 'ohio', 'sigma', 'tiktok', 'skibidi']
+# Liste der 44 Länder Europas
+europa_laender = [
+    "Albanien", "Andorra", "Belarus", "Belgien", "Bosnien und Herzegowina",
+    "Bulgarien", "Dänemark", "Deutschland", "Estland", "Finnland",
+    "Frankreich", "Griechenland", "Irland", "Island", "Italien",
+    "Kroatien", "Lettland", "Liechtenstein", "Litauen", "Luxemburg",
+    "Malta", "Moldau", "Monaco", "Montenegro", "Niederlande",
+    "Nordmazedonien", "Norwegen", "Österreich", "Polen", "Portugal",
+    "Rumänien", "Russland", "San Marino", "Schweden", "Schweiz",
+    "Serbien", "Slowakei", "Slowenien", "Spanien", "Tschechien",
+    "Ukraine", "Ungarn", "Vatikanstadt", "Vereinigtes Königreich"
+]
+
+word_bank = europa_laender
 
 word = random.choice(word_bank)
 guessedWord = ['_'] * len(word)
@@ -41,9 +54,9 @@ while attempts > 0:
   while guess == '':
     guess = input('Enter a letter: ').lower()
 
-  if guess in word:
+  if guess in word.lower():
     for i in range(len(word)):
-      if word[i] == guess:
+      if word[i].lower() == guess:
         guessedWord[i] = guess
     print('Great guess!')
   else:
