@@ -18,6 +18,7 @@ word_bank = europa_laender
 word = random.choice(word_bank)
 guessedWord = ['_'] * len(word)
 attempts = 8
+guessedLetters = []
 
 gibbet = '__________\n |/       \n |        \n |        \n |        \n |        \n |        \n_|___     '
 phase1 = '__________\n |/    |  \n |        \n |        \n |        \n |        \n |        \n_|___     '
@@ -49,6 +50,7 @@ print('Let\'s start!')
 # Game-Loop - randomly chooses a word from the word_bank and let's you guess
 while attempts > 0:
   print('\nCurrent word: ' + ''.join(guessedWord) + '(' + str(len(word)) +')')
+  letters = ""
 
   guess = input('Guess a letter: ').lower()
   while guess == '':
@@ -88,7 +90,13 @@ while attempts > 0:
     elif attempts == 0:
       phase = phase8
       print(phase)
-    print('Attempts left: ' + str(attempts))
+    
+  if not guess in guessedLetters:
+    guessedLetters.append(guess)
+  
+  for letter in guessedLetters:
+    letters += letter + ' '
+  print('Attempts left: ' + str(attempts) + '\nGuessed Letters: ' + letters)
 
   if '_' not in guessedWord:
       print('\nCongratulations!! You guessed the word: ' + word)
