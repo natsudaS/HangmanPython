@@ -1,5 +1,15 @@
 # Play a game of Hangman
 To create this little console based hangman game I followed a tutorial from Codédex by Daniel Li (https://www.codedex.io/projects/build-a-word-guessing-game-with-python).
+```
+__________ 
+ |/    |   
+ |     O   
+ |    \|/ 
+ |     |   
+ |    / \ 
+ |        
+_|___
+```      
 
 ## Add-ons and changes
 - Later added a welcoming message asking the user if he want's to play the game. If 'yes' it's started, if 'no' the program is exited.
