@@ -1,19 +1,19 @@
 import random
 
 # Liste der 44 Länder Europas
-europa_laender = [
-    "Albanien", "Andorra", "Belarus", "Belgien", "Bosnien und Herzegowina",
-    "Bulgarien", "Dänemark", "Deutschland", "Estland", "Finnland",
-    "Frankreich", "Griechenland", "Irland", "Island", "Italien",
-    "Kroatien", "Lettland", "Liechtenstein", "Litauen", "Luxemburg",
-    "Malta", "Moldau", "Monaco", "Montenegro", "Niederlande",
-    "Nordmazedonien", "Norwegen", "Österreich", "Polen", "Portugal",
-    "Rumänien", "Russland", "San Marino", "Schweden", "Schweiz",
-    "Serbien", "Slowakei", "Slowenien", "Spanien", "Tschechien",
-    "Ukraine", "Ungarn", "Vatikanstadt", "Vereinigtes Königreich"
+europe_countries = [
+    "Albania", "Andorra", "Austria", "Belarus", "Belgium",
+    "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czech Republic", "Denmark",
+    "Estonia", "Finland", "France", "Germany", "Greece",
+    "Hungary", "Iceland", "Ireland", "Italy", "Latvia",
+    "Liechtenstein", "Lithuania", "Luxembourg", "Malta", "Moldova",
+    "Monaco", "Montenegro", "Netherlands", "North Macedonia", "Norway",
+    "Poland", "Portugal", "Romania", "Russia", "San Marino",
+    "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden",
+    "Switzerland", "Ukraine", "United Kingdom", "Vatican City"
 ]
 
-word_bank = europa_laender
+word_bank = europe_countries
 
 word = random.choice(word_bank)
 guessedWord = ['_'] * len(word)
