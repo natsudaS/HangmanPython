@@ -1,23 +1,24 @@
 import random
 
 # Liste der 44 Länder Europas
-europa_laender = [
-    "Albanien", "Andorra", "Belarus", "Belgien", "Bosnien und Herzegowina",
-    "Bulgarien", "Dänemark", "Deutschland", "Estland", "Finnland",
-    "Frankreich", "Griechenland", "Irland", "Island", "Italien",
-    "Kroatien", "Lettland", "Liechtenstein", "Litauen", "Luxemburg",
-    "Malta", "Moldau", "Monaco", "Montenegro", "Niederlande",
-    "Nordmazedonien", "Norwegen", "Österreich", "Polen", "Portugal",
-    "Rumänien", "Russland", "San Marino", "Schweden", "Schweiz",
-    "Serbien", "Slowakei", "Slowenien", "Spanien", "Tschechien",
-    "Ukraine", "Ungarn", "Vatikanstadt", "Vereinigtes Königreich"
+europe_countries = [
+    "Albania", "Andorra", "Austria", "Belarus", "Belgium",
+    "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Czech Republic", "Denmark",
+    "Estonia", "Finland", "France", "Germany", "Greece",
+    "Hungary", "Iceland", "Ireland", "Italy", "Latvia",
+    "Liechtenstein", "Lithuania", "Luxembourg", "Malta", "Moldova",
+    "Monaco", "Montenegro", "Netherlands", "North Macedonia", "Norway",
+    "Poland", "Portugal", "Romania", "Russia", "San Marino",
+    "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden",
+    "Switzerland", "Ukraine", "United Kingdom", "Vatican City"
 ]
 
-word_bank = europa_laender
+word_bank = europe_countries
 
 word = random.choice(word_bank)
 guessedWord = ['_'] * len(word)
 attempts = 8
+guessedLetters = []
 
 gibbet = '__________\n |/       \n |        \n |        \n |        \n |        \n |        \n_|___     '
 phase1 = '__________\n |/    |  \n |        \n |        \n |        \n |        \n |        \n_|___     '
@@ -49,6 +50,7 @@ print('Let\'s start!')
 # Game-Loop - randomly chooses a word from the word_bank and let's you guess
 while attempts > 0:
   print('\nCurrent word: ' + ''.join(guessedWord) + '(' + str(len(word)) +')')
+  letters = ""
 
   guess = input('Guess a letter: ').lower()
   while guess == '':
@@ -88,7 +90,13 @@ while attempts > 0:
     elif attempts == 0:
       phase = phase8
       print(phase)
-    print('Attempts left: ' + str(attempts))
+    
+  if not guess in guessedLetters:
+    guessedLetters.append(guess)
+  
+  for letter in guessedLetters:
+    letters += letter + ' '
+  print('Attempts left: ' + str(attempts) + '\nGuessed Letters: ' + letters)
 
   if '_' not in guessedWord:
       print('\nCongratulations!! You guessed the word: ' + word)
