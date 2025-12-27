@@ -25,3 +25,14 @@ ___
 ```bash
 python HangmanPython.py
 ```
+___
+#### Features I want to implement later:
+- [ ] blank space display (don't need to be guessed)
+- [ ] different data sets to choose from for the random word 
+
+
+
+
+
+
+
